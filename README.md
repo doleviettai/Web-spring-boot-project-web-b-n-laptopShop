@@ -174,12 +174,17 @@ CREATE DATABASE laptopshop CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
 **3. Cấu hình kết nối database**
 
-Mở file `src/main/resources/application.properties` và chỉnh sửa:
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/laptopshop
-spring.datasource.username=your_username
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
+Mở file `src/main/resources/application.yaml` và chỉnh sửa:
+```yaml
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto : update
+  datasource:
+    url : "jdbc:mysql://localhost:3306/laptopshop"
+    username : your_username
+    password : your_password
 ```
 
 **4. Chạy ứng dụng**
